@@ -72,3 +72,12 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## How To Run
+- Clone this repository to your computer
+- Create Database that named "url_shortner"
+- run "composer install" on your terminal (make sure the directory of this project is opened on your terminal)
+- run "php artisan migrate" on your terminal
+- run the program by run "php artisan serve" on your terminal
+- The postman simulation was create by me, just import this url : https://www.getpostman.com/collections/7c8e2f1e2911e98e2e1e for getting collection for simulate this project 
+- Thanks.
