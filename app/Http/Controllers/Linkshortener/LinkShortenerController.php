@@ -57,7 +57,7 @@ class LinkShortenerController extends Controller
         }
 
         if (!empty($errors))
-            return response()->json($errors, $this->statusCode->badRequest());
+            return response()->json(["messages" => $errors], $this->statusCode->badRequest());
 
         try {
             $data = [
@@ -98,12 +98,12 @@ class LinkShortenerController extends Controller
         }
 
         if (!empty($errors))
-            return response()->json($errors, $this->statusCode->badRequest());
+            return response()->json(["messages" => $errors], $this->statusCode->badRequest());
 
         $linkShortened = $this->linkshortenerRepository->findByColumn('code', $code);
 
         if (empty($linkShortened))
-            return response()->json("Url not found.", $this->statusCode->notFound());
+            return response()->json(["messages" => "Url not found."], $this->statusCode->notFound());
 
         try {
             $linkShortened->link = $request->get('link');
@@ -130,7 +130,7 @@ class LinkShortenerController extends Controller
         $linkShortened = $this->linkshortenerRepository->findByColumn('code', $code);
 
         if (empty($linkShortened))
-            return response()->json("Url not found.", $this->statusCode->notFound());
+            return response()->json(["messages" => "Url not found."], $this->statusCode->notFound());
 
         try {
             $linkShortened->delete();
@@ -152,7 +152,7 @@ class LinkShortenerController extends Controller
         $linkShortened = $this->linkshortenerRepository->findByColumn('code',$code);
 
         if (empty($linkShortened))
-            return response()->json("Url not found.", $this->statusCode->notFound());
+            return response()->json(["messages" => "Url not found."], $this->statusCode->notFound());
 
         return redirect($linkShortened->link);
     }
