@@ -75,6 +75,7 @@ The Laravel framework is open-source software licensed under the [MIT license](h
 
 ## How To Run
 - Clone this repository to your computer
+- Add .env on your project base on .env.example file
 - Create Database that named "url_shortner"
 - run "composer install" on your terminal (make sure the directory of this project is opened on your terminal)
 - run "php artisan migrate" on your terminal
